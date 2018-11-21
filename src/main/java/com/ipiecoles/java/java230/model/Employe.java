@@ -3,9 +3,14 @@ package com.ipiecoles.java.java230.model;
 import org.hibernate.annotations.Type;
 import org.joda.time.LocalDate;
 
+import javax.persistence.*;
 import java.util.Objects;
 
-public abstract class Employe {
+@Entity
+public class Employe {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 
 	private Long id;
 
@@ -40,7 +45,7 @@ public abstract class Employe {
 		return Entreprise.NB_CONGES_BASE;
 	}
 	
-	public abstract Double getPrimeAnnuelle();
+	//public abstract Double getPrimeAnnuelle();
 
 	public void augmenterSalaire(Double pourcentage) {
 		this.salaire = this.getSalaire() * (1 + pourcentage);
@@ -159,4 +164,5 @@ public abstract class Employe {
 	public int hashCode() {
 		return Objects.hash(nom, prenom, matricule, dateEmbauche, salaire);
 	}
+
 }

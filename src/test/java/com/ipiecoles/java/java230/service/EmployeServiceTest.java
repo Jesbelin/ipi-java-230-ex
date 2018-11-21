@@ -2,6 +2,7 @@ package com.ipiecoles.java.java230.service;
 
 import com.ipiecoles.java.java230.model.Commercial;
 import com.ipiecoles.java.java230.model.Employe;
+import com.ipiecoles.java.java230.repository.EmployeRepository;
 import com.ipiecoles.java.java230.utils.TestUtils;
 import org.assertj.core.api.Assertions;
 import org.joda.time.LocalDate;
@@ -22,11 +23,11 @@ import static org.junit.Assert.*;
 @SpringBootTest
 public class EmployeServiceTest {
 
-    /*@Autowired
+    @Autowired
     private EmployeService employeService;
 
     @Autowired
-    private EmployeRepository employeRepository;*/
+    private EmployeRepository employeRepository;
 
     @Test
     public void exo301testInit() throws Exception {
@@ -39,12 +40,12 @@ public class EmployeServiceTest {
     public void exo302testFindById(){
         //Given
 
-        /*//When
+        //When
         Employe e = employeService.findById(2L);
 
         //Then
         Assertions.assertThat(e).isNotNull();
-        Assertions.assertThat(e.getMatricule()).isEqualTo("M11109");*/
+        Assertions.assertThat(e.getMatricule()).isEqualTo("M11109");
 
     }
 
@@ -53,11 +54,11 @@ public class EmployeServiceTest {
         //Given
 
         //When
-        /*Long c = employeService.countAllEmploye();
+        Long c = employeService.countAllEmploye();
 
         //Then
         Assertions.assertThat(c).isNotNull();
-        Assertions.assertThat(c).isEqualTo(2502L);*/
+        Assertions.assertThat(c).isEqualTo(2502L);
 
     }
 
@@ -67,13 +68,13 @@ public class EmployeServiceTest {
         Employe c = new Commercial("test", "test", "test", LocalDate.now(), 500d, 0d);
 
         //When
-        /*c = employeService.creerEmploye(c);
+        c = employeService.creerEmploye(c);
 
         //Then
         Assertions.assertThat(c.getId()).isNotNull();
 
         //TearDown
-        employeRepository.delete(c.getId());*/
+        employeRepository.delete(c.getId());
 
     }
 
@@ -81,13 +82,13 @@ public class EmployeServiceTest {
     public void exo305testDeleteEmploye(){
         //Given
         Commercial c = new Commercial("test", "test", "test", LocalDate.now(), 500d, 0d);
-        /*c = employeRepository.save(c);
+        c = employeRepository.save(c);
 
         //When
         employeService.deleteEmploye(c.getId());
 
         //Then
-        Assertions.assertThat(employeService.findById(c.getId())).isNull();*/
+        Assertions.assertThat(employeService.findById(c.getId())).isNull();
 
     }
 
